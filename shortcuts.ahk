@@ -19,7 +19,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ^!+a:: run "appwiz.cpl"                                                ; Appwiz
 ^!+n:: run "C:\Users\%A_UserName%\Google Drive\notes.org"              ; notes.org
 ^!+r:: Reload                                                          ; Reload autohotkey
-^!+e:: Edit                                                            ; Reload autohotkey
+^!+e:: Edit                                                            ; Edit autohotkey
 
 ^!d:: run "C:\Users\%A_UserName%\Downloads"                            ; Downloads
 ^!i:: run "Y:\iso"                                                     ; ISO folder
@@ -32,16 +32,16 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 ^+c:: ConvertClipboardToString()                                       ; Convert clipboard to string
 ^+s:: run "C:\Users\%A_UserName%\Dropbox"                              ; Dropbox
-^+w:: run "C:\Users\%A_UserName%\work"                                 ; Local work
+^+w:: run "Y:\software\windows"                                        ; Local work
 ^+x:: EditFileList("C:\Program Files\Notepad++\notepad++.exe", "")     ; Edit files with notepass++
 
 ;***FOLDER GROUPS***
 ;Media Files
 ^!+m::
-    run "E:\tv"
-    run "\\vmint\Downloads"
     run "E:\_movies"
+    run "E:\tv"
     run "Y:\media\"
+    run "\\vmint\Downloads"
 return
 
 ;REMAP Capslock in vim
