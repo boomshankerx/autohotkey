@@ -4,17 +4,20 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
-#0:: RunProgram("C:\Program Files (x86)\Vim\vim80\gvim.exe")           ; Vim
+
+#-:: RunProgram("C:\Program Files\Notepad++\notepad++.exe")            ; Notepad
 #1:: run "C:\Users\%A_UserName%\Dropbox"                               ; Dropbox
 #2:: run "C:\Users\%A_UserName%\Google Drive"                          ; Google Drive
 #3:: run "C:\Users\%A_UserName%\OneDrive"                              ; One Drive
 #8:: run "V:"                                                          ; VMFS Drive
-#9:: RunProgram("C:\Program Files\Notepad++\notepad++.exe")            ; Notepad
+#=:: RunProgram("C:\Program Files (x86)\Vim\vim80\gvim.exe")           ; Vim
 #`:: run "C:\Users\%A_UserName%"                                       ; Home
 ;#4:: run ""
 ;#5:: run ""
 ;#6:: run ""
 ;#7:: run ""
+;#9:: run ""
+#0:: run "C:\work"
 
 ^!+a:: run "appwiz.cpl"                                                ; Appwiz
 ^!+n:: run "C:\Users\%A_UserName%\Google Drive\notes.org"              ; notes.org
@@ -38,9 +41,9 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ;***FOLDER GROUPS***
 ;Media Files
 ^!+m::
-    run "E:\_movies"
-    run "E:\tv"
-    run "Y:\media\"
+    ;run "E:\_movies"
+    ;run "E:\tv"
+    ;run "Y:\media\"
     run "\\vmint\Downloads"
 return
 
