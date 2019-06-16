@@ -5,29 +5,34 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
-#-:: RunProgram("C:\Program Files\Notepad++\notepad++.exe")            ; Notepad
 #1:: run "C:\Users\%A_UserName%\Dropbox"                               ; Dropbox
 #2:: run "C:\Users\%A_UserName%\Google Drive"                          ; Google Drive
 #3:: run "C:\Users\%A_UserName%\OneDrive"                              ; One Drive
 #8:: run "V:"                                                          ; VMFS Drive
-#=:: RunProgram("C:\Program Files (x86)\Vim\vim80\gvim.exe")           ; Vim
 #`:: run "C:\Users\%A_UserName%"                                       ; Home
 ;#4:: run ""
 ;#5:: run ""
 ;#6:: run ""
 ;#7:: run ""
-;#9:: run ""
-#0:: run "C:\work"
+#9:: run "Firefox"
+#0:: run "Chrome"
+#-:: RunProgram("C:\Program Files\Notepad++\notepad++.exe")            ; Notepad
+#=:: RunProgram("C:\Program Files (x86)\Vim\vim80\gvim.exe")           ; Vim
+;#0:: run "C:\work"
+
+^#=:: RunProgram("C:\Program Files (x86)\Vim\vim80\gvim.exe -O C:\Users\%A_UserName%\Dropbox\choco.base.bat")           ; Vim
 
 ^!+a:: run "appwiz.cpl"                                                ; Appwiz
 ^!+n:: run "C:\Users\%A_UserName%\Google Drive\notes.org"              ; notes.org
 ^!+r:: Reload                                                          ; Reload autohotkey
 ^!+e:: Edit                                                            ; Edit autohotkey
+^!+w:: run "C:\work"
 
 ^!d:: run "C:\Users\%A_UserName%\Downloads"                            ; Downloads
 ^!i:: run "Y:\iso"                                                     ; ISO folder
 ^!k:: run "C:\Program Files (x86)\KeePass Password Safe 2\KeePass.exe" ; Keepass
 ^!r:: run "R:\"                                                        ; Repos
+^!t:: run "T:\"                                                        ; TechG
 ^!s:: run "Y:\"                                                        ; Storage
 ^!w:: run "W:\"                                                        ; Server work
 ^!x:: EditFileList("C:\Program Files (x86)\Vim\vim80\gvim.exe", "-O")  ; Edit files with Vim
