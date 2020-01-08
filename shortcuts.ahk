@@ -4,6 +4,8 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
+VIM := "C:\Program Files (x86)\Vim\vim81\gvim.exe"
+NP  := "C:\Program Files (x86)\Notepad++\notepad++.exe"
 
 #1:: run "C:\Users\%A_UserName%\Dropbox"                               ; Dropbox
 #2:: run "C:\Users\%A_UserName%\Google Drive"                          ; Google Drive
@@ -16,16 +18,15 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ;#7:: run ""
 #9:: run "Firefox"
 #0:: run "Chrome"
-#-:: RunProgram("C:\Program Files\Notepad++\notepad++.exe")            ; Notepad
-#=:: RunProgram("C:\Program Files (x86)\Vim\vim80\gvim.exe")           ; Vim
+#-:: RunProgram(NP)                                                    ; Notepad
+#=:: RunProgram(VIM)                                                   ; Vim
 ;#0:: run "C:\work"
 
-^#=:: RunProgram("C:\Program Files (x86)\Vim\vim80\gvim.exe -O C:\Users\%A_UserName%\Dropbox\choco.base.bat")           ; Vim
-
 ^!+a:: run "appwiz.cpl"                                                ; Appwiz
-^!+n:: run "C:\Users\%A_UserName%\Google Drive\notes.org"              ; notes.org
-^!+r:: Reload                                                          ; Reload autohotkey
 ^!+e:: Edit                                                            ; Edit autohotkey
+^!+n:: run "C:\Users\%A_UserName%\Google Drive\notes.org"              ; notes.org
+^!+p:: PasteKeystrokes()
+^!+r:: Reload                                                          ; Reload autohotkey
 ^!+w:: run "C:\work"
 
 ^!d:: run "C:\Users\%A_UserName%\Downloads"                            ; Downloads
@@ -35,7 +36,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ^!t:: run "T:\"                                                        ; TechG
 ^!s:: run "Y:\"                                                        ; Storage
 ^!w:: run "W:\"                                                        ; Server work
-^!x:: EditFileList("C:\Program Files (x86)\Vim\vim80\gvim.exe", "-O")  ; Edit files with Vim
+^!x:: EditFileList(VIM, "-O")        ; Edit files with Vim
 ^!z:: run "Z:\"                                                        ; Documents
 
 ^+c:: ConvertClipboardToString()                                       ; Convert clipboard to string
@@ -116,5 +117,10 @@ EditFileList(editor, seperator)
     }
     cmd .= A_SPACE . filelist
     RunProgram(cmd)
+}
+
+PasteKeystrokes()
+{
+    SendRaw %clipboard%
 }
 
