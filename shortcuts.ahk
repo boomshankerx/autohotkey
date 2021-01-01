@@ -8,19 +8,18 @@ VIM := "C:\Program Files (x86)\Vim\vim82\gvim.exe"
 NPP  := "C:\Program Files (x86)\Notepad++\notepad++.exe"
 
 #`:: run "C:\Users\%A_UserName%"                                       ; Home
-#0:: run "OneNote"
 #1:: run "C:\Users\%A_UserName%\Dropbox"                               ; Dropbox
 #2:: run "C:\Users\%A_UserName%\Google Drive"                          ; Google Drive
 #3:: run "C:\Users\%A_UserName%\OneDrive"                              ; One Drive
 #4:: run "C:\scripts"
-#8:: run "V:"                                                          ; VMFS Drive
+#5:: run ""
+#6:: run ""
+#7:: run ""
+#8:: run ""                                                          ; VMFS Drive
 #9:: run "Z:\_Templates"
+#0:: run "OneNote"
 #-:: RunProgram(NPP)                                                    ; Notepad
 #=:: RunProgram(VIM)                                                   ; Vim
-;#5:: run ""
-;#6:: run ""
-;#7:: run ""
-;#9:: run ""
 
 ^!+a:: run "appwiz.cpl"                                                ; Appwiz
 ^!+e:: Edit                                                            ; Edit autohotkey
