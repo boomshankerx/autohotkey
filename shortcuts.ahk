@@ -7,7 +7,9 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 VIM := "C:\Program Files\Vim\vim82\gvim.exe"
 NPP := "C:\Program Files (x86)\Notepad++\notepad++.exe"
 
-#`:: run "C:\Users\%A_UserName%"                                       ; Home
+;WIN
+#-:: RunProgram(NPP)                                                   ; Notepad
+#0:: run "OneNote"
 #1:: run "C:\Users\%A_UserName%\OneDrive"                              ; One Drive
 #2:: run "C:\Users\%A_UserName%\Google Drive"                          ; Google Drive
 #3:: run "C:\Users\%A_UserName%\Dropbox"                               ; Dropbox
@@ -15,22 +17,26 @@ NPP := "C:\Program Files (x86)\Notepad++\notepad++.exe"
 #5:: run "T:\files"
 #6:: run "C:\scripts"
 #9:: run "Z:\_Templates"
-#0:: run "OneNote"
-#-:: RunProgram(NPP)                                                   ; Notepad
 #=:: RunProgram(VIM)                                                   ; Vim
-#NumpadMult:: run "calc.exe"
 #Enter:: run "OneNote"
+#NumpadMult:: run "calc.exe"
+#`:: run "C:\Users\%A_UserName%"                                       ; Home
+#t:: run "wt"
 
-!#`:: run "C:\Users\lorne\OneDrive\TechG\Network.xlsx" 
+;ALT WIN
 !#1:: run "C:\Users\lorne\OneDrive\Financial Statements.xlsx"
 !#2:: run "C:\Users\lorne\OneDrive\TechG\TechG.xlsx"
+!#`:: run "C:\Users\lorne\OneDrive\TechG\Network.xlsx" 
 
+;CTRL ALT SHIFT
 ^!+a:: run "appwiz.cpl"                                                ; Appwiz
 ^!+e:: Edit                                                            ; Edit autohotkey
 ^!+r:: Reload                                                          ; Reload autohotkey
+^!+t:: run *runas "wt"
 ^!+v:: PasteKeystrokes()
 ^!+w:: run "W:\"                                                       ; Server work
 
+;CTRL ALT
 ^!d:: run "C:\Users\%A_UserName%\Downloads"                            ; Downloads
 ^!f:: run "Z:\files"
 ^!i:: run "Y:\iso"                                                     ; ISO folder
@@ -39,12 +45,12 @@ NPP := "C:\Program Files (x86)\Notepad++\notepad++.exe"
 ^!o:: run "C:\Opt"
 ^!r:: run "R:\"                                                        ; Repos
 ^!s:: run "Y:\"                                                        ; Storage
-^!t:: run "T:\"                                                        ; TechG
+^!t:: run "wt"                                                        ; TechG
 ^!w:: run "C:\w"
 ^!x:: EditFileList(VIM, "-O")                                          ; Edit files with Vim
 ^!z:: run "Z:\"                                                        ; Documents
 
-;^+c:: ConvertClipboardToString()                                      ; Convert clipboard to string
+;CTRL SHIFT
 ^+=:: run "OneNote"
 ^+s:: run "C:\Users\%A_UserName%\Dropbox"                              ; Dropbox
 ^+w:: run "Y:\software\windows"                                        ; Local work
