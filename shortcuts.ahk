@@ -4,7 +4,7 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
-VIM := "C:\Program Files\Vim\vim82\gvim.exe"
+VIM := "C:\Program Files\Vim\vim90\gvim.exe"
 NPP := "C:\Program Files (x86)\Notepad++\notepad++.exe"
 
 ;WIN
@@ -25,8 +25,8 @@ NPP := "C:\Program Files (x86)\Notepad++\notepad++.exe"
 
 ;ALT WIN
 !#1:: run "C:\Users\lorne\OneDrive\Financial Statements.xlsx"
-!#2:: run "C:\Users\lorne\OneDrive\TechG\TechG.xlsx"
-!#`:: run "C:\Users\lorne\OneDrive\TechG\Network.xlsx" 
+!#2:: run "C:\Users\lorne\TechG Solutions\TechG Solutions - Documents\TechG.xlsx"
+!#`:: run "C:\Users\lorne\TechG Solutions\TechG Solutions - Documents\Network.xlsx" 
 
 ;CTRL ALT SHIFT
 ^!+a:: run "appwiz.cpl"                                                ; Appwiz
@@ -40,12 +40,12 @@ NPP := "C:\Program Files (x86)\Notepad++\notepad++.exe"
 ^!d:: run "C:\Users\%A_UserName%\Downloads"                            ; Downloads
 ^!f:: run "Z:\files"
 ^!i:: run "Y:\iso"                                                     ; ISO folder
-^!k:: run "C:\Program Files (x86)\KeePass Password Safe 2\KeePass.exe" ; Keepass
+^!k:: run "C:\Program Files\KeePass Password Safe 2\KeePass.exe"       ; Keepass
 ^!m:: run "M:\"
 ^!o:: run "C:\Opt"
 ^!r:: run "R:\"                                                        ; Repos
 ^!s:: run "Y:\"                                                        ; Storage
-^!t:: run "wt"                                                        ; TechG
+^!t:: run "wt"                                                         ; TechG
 ^!w:: run "C:\w"
 ^!x:: EditFileList(VIM, "-O")                                          ; Edit files with Vim
 ^!z:: run "Z:\"                                                        ; Documents
