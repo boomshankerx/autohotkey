@@ -4,23 +4,24 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
-VIM := "C:\Program Files\Vim\vim90\gvim.exe"
-NPP := "C:\Program Files (x86)\Notepad++\notepad++.exe"
+CODE := "C:\Program Files\Microsoft VS Code\Code.exe"
+NPP  := "C:\Program Files\Notepad++\notepad++.exe"
+VIM  := "C:\Program Files\Vim\vim90\gvim.exe"
 
 ;WIN
-#-:: RunProgram(NPP)                                                   ; Notepad
-#0:: run "OneNote"
-#1:: run "C:\Users\%A_UserName%\OneDrive"                              ; One Drive
-#2:: run "C:\Users\%A_UserName%\Google Drive"                          ; Google Drive
-#3:: run "C:\Users\%A_UserName%\Dropbox"                               ; Dropbox
+#1:: run "C:\Users\%A_UserName%\OneDrive"
+#2:: run "C:\Users\%A_UserName%\Google Drive"
+#3:: run "C:\Users\%A_UserName%\Dropbox"
 #4:: run "Z:\files"
 #5:: run "T:\files"
 #6:: run "C:\scripts"
 #9:: run "Z:\_Templates"
-#=:: RunProgram(VIM)                                                   ; Vim
+#-:: run % NPP 
+#=:: run % VIM
+#0:: run % CODE
 #Enter:: run "OneNote"
 #NumpadMult:: run "calc.exe"
-#`:: run "C:\Users\%A_UserName%"                                       ; Home
+#`:: run "C:\Users\%A_UserName%"
 #t:: run "wt"
 
 ;ALT WIN
@@ -29,32 +30,33 @@ NPP := "C:\Program Files (x86)\Notepad++\notepad++.exe"
 !#`:: run "C:\Users\lorne\TechG Solutions\TechG Solutions - Documents\Network.xlsx" 
 
 ;CTRL ALT SHIFT
-^!+a:: run "appwiz.cpl"                                                ; Appwiz
-^!+e:: Edit                                                            ; Edit autohotkey
-^!+r:: Reload                                                          ; Reload autohotkey
+^!+a:: run "appwiz.cpl"
+^!+e:: Edit
+^!+r:: Reload
 ^!+t:: run *runas "wt"
 ^!+v:: PasteKeystrokes()
-^!+w:: run "W:\"                                                       ; Server work
+^!+w:: run "W:\"
+^!+x:: EditFileList(CODE, "")
 
 ;CTRL ALT
-^!d:: run "C:\Users\%A_UserName%\Downloads"                            ; Downloads
+^!d:: run "C:\Users\%A_UserName%\Downloads"
 ^!f:: run "Z:\files"
-^!i:: run "Y:\iso"                                                     ; ISO folder
-^!k:: run "C:\Program Files\KeePass Password Safe 2\KeePass.exe"       ; Keepass
+^!i:: run "Y:\iso"
+^!k:: run "C:\Program Files\KeePass Password Safe 2\KeePass.exe"
 ^!m:: run "M:\"
 ^!o:: run "C:\Opt"
-^!r:: run "R:\"                                                        ; Repos
-^!s:: run "Y:\"                                                        ; Storage
-^!t:: run "wt"                                                         ; TechG
+^!r:: run "R:\"
+^!s:: run "Y:\"
+^!t:: run "wt"
 ^!w:: run "C:\w"
-^!x:: EditFileList(VIM, "-O")                                          ; Edit files with Vim
-^!z:: run "Z:\"                                                        ; Documents
+^!x:: EditFileList(VIM, "-O")
+^!z:: run "Z:\"
 
 ;CTRL SHIFT
 ^+=:: run "OneNote"
-^+s:: run "C:\Users\%A_UserName%\Dropbox"                              ; Dropbox
-^+w:: run "Y:\software\windows"                                        ; Local work
-^+x:: EditFileList(NPP, "")                                            ; Edit files with notepad++
+^+s:: run "C:\Users\%A_UserName%\Dropbox"
+^+w:: run "Y:\software\windows"
+^+x:: EditFileList(NPP, "")
 
 ;***FOLDER GROUPS***
 ;Media Files
