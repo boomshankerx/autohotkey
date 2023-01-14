@@ -6,17 +6,18 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 CODE := "C:\Program Files\Microsoft VS Code\Code.exe"
 NPP  := "C:\Program Files\Notepad++\notepad++.exe"
+SUB  := "C:\Program Files\Sublime Text\sublime_text.exe"
 VIM  := "C:\Program Files\Vim\vim90\gvim.exe"
 
 ;WIN
 #1:: run "C:\Users\%A_UserName%\OneDrive"
 #2:: run "C:\Users\%A_UserName%\Google Drive"
 #3:: run "C:\Users\%A_UserName%\Dropbox"
-#4:: run "Z:\files"
-#5:: run "T:\files"
-#6:: run "C:\scripts"
+#4:: run "C:\Users\%A_UserName%\Sync"
+#5:: run "Z:\files"
+#6:: run "T:\files"
 #9:: run "Z:\_Templates"
-#-:: run % NPP 
+#-:: run % SUB 
 #=:: run % VIM
 #0:: run % CODE
 #Enter:: run "OneNote"
@@ -29,15 +30,6 @@ VIM  := "C:\Program Files\Vim\vim90\gvim.exe"
 !#2:: run "C:\Users\lorne\TechG Solutions\TechG Solutions - Documents\TechG.xlsx"
 !#`:: run "C:\Users\lorne\TechG Solutions\TechG Solutions - Documents\Network.xlsx" 
 
-;CTRL ALT SHIFT
-^!+a:: run "appwiz.cpl"
-^!+e:: Edit
-^!+r:: Reload
-^!+t:: run *runas "wt"
-^!+v:: PasteKeystrokes()
-^!+w:: run "W:\"
-^!+x:: EditFileList(CODE, "")
-
 ;CTRL ALT
 ^!d:: run "C:\Users\%A_UserName%\Downloads"
 ^!f:: run "Z:\files"
@@ -48,7 +40,7 @@ VIM  := "C:\Program Files\Vim\vim90\gvim.exe"
 ^!r:: run "R:\"
 ^!s:: run "Y:\"
 ^!t:: run "wt"
-^!w:: run "C:\w"
+^!w:: run "C:\w.kali"
 ^!x:: EditFileList(VIM, "-O")
 ^!z:: run "Z:\"
 
@@ -56,32 +48,18 @@ VIM  := "C:\Program Files\Vim\vim90\gvim.exe"
 ^+=:: run "OneNote"
 ^+s:: run "C:\Users\%A_UserName%\Dropbox"
 ^+w:: run "Y:\software\windows"
-^+x:: EditFileList(NPP, "")
+^+x:: EditFileList(SUB, "")
 
-;***FOLDER GROUPS***
-;Media Files
-^!+m:: run "\\vmint\Downloads"
-
-;REMAP Capslock in vim
-*Capslock::
-    classname = ""
-    keystate = ""
-    WinGetClass, classname, A
-    if (classname = "Vim")
-    {
-    SetCapsLockState, Off
-    Send, {ESC}
-    }
-    else
-    {
-    GetKeyState, keystate, CapsLock, T
-    if (keystate = "D")
-      SetCapsLockState, Off
-    else
-      SetCapsLockState, On
-    return
-    }
-return
+;CTRL ALT SHIFT
+^!+a:: run "appwiz.cpl"
+^!+e:: Edit
+^!+m:: run "M:\movies"
+^!+r:: Reload
+^!+t:: run *runas "wt"
+^!+u:: run "C:\Program Files\VS Revo Group\Revo Uninstaller\RevoUnin.exe"
+^!+v:: PasteKeystrokes()
+^!+w:: run "W:\"
+^!+x:: EditFileList(CODE, "")
 
 ;FUNCTIONS
 RunProgram(program)
