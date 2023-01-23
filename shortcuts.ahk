@@ -4,16 +4,18 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
+EnvGet, A_USERPROFILE, USERPROFILE
+
 CODE := "C:\Program Files\Microsoft VS Code\Code.exe"
 NPP  := "C:\Program Files\Notepad++\notepad++.exe"
 SUB  := "C:\Program Files\Sublime Text\sublime_text.exe"
 VIM  := "C:\Program Files\Vim\vim90\gvim.exe"
 
 ;WIN
-#1:: run "C:\Users\%A_UserName%\OneDrive"
-#2:: run "C:\Users\%A_UserName%\Google Drive"
-#3:: run "C:\Users\%A_UserName%\Dropbox"
-#4:: run "C:\Users\%A_UserName%\Sync"
+#1:: run "%A_USERPROFILE%\OneDrive"
+#2:: run "%A_USERPROFILE%\Google Drive"
+#3:: run "%A_USERPROFILE%\Dropbox"
+#4:: run "%A_USERPROFILE%\Sync"
 #5:: run "Z:\files"
 #6:: run "T:\files"
 #9:: run "Z:\_Templates"
@@ -22,16 +24,16 @@ VIM  := "C:\Program Files\Vim\vim90\gvim.exe"
 #0:: run % CODE
 #Enter:: run "OneNote"
 #NumpadMult:: run "calc.exe"
-#`:: run "C:\Users\%A_UserName%"
+#`:: run "%A_USERPROFILE%"
 #t:: run "wt"
 
 ;ALT WIN
-!#1:: run "C:\Users\lorne\OneDrive\Financial Statements.xlsx"
-!#2:: run "C:\Users\lorne\TechG Solutions\TechG Solutions - Documents\TechG.xlsx"
-!#`:: run "C:\Users\lorne\TechG Solutions\TechG Solutions - Documents\Network.xlsx" 
+!#1:: run "%A_USERPROFILE%\OneDrive\Financial Statements.xlsx"
+!#2:: run "%A_USERPROFILE%\TechG Solutions\TechG Solutions - Documents\TechG.xlsx"
+!#`:: run "%A_USERPROFILE%\TechG Solutions\TechG Solutions - Documents\Network.xlsx" 
 
 ;CTRL ALT
-^!d:: run "C:\Users\%A_UserName%\Downloads"
+^!d:: run "%A_USERPROFILE%\Downloads"
 ^!f:: run "Z:\files"
 ^!i:: run "Y:\iso"
 ^!k:: run "C:\Program Files\KeePass Password Safe 2\KeePass.exe"
@@ -40,14 +42,15 @@ VIM  := "C:\Program Files\Vim\vim90\gvim.exe"
 ^!r:: run "R:\"
 ^!s:: run "Y:\"
 ^!t:: run "wt"
-^!w:: run "C:\w.kali"
+^!u:: run "%A_USERPROFILE%\Dropbox\_tools\_usb"
+^!w:: run "C:\w"
 ^!x:: EditFileList(VIM, "-O")
 ^!z:: run "Z:\"
 
 ;CTRL SHIFT
 ^+=:: run "OneNote"
-^+s:: run "C:\Users\%A_UserName%\Dropbox"
-^+w:: run "Y:\software\windows"
+^+s:: run "%A_USERPROFILE%\Dropbox"
+^+w:: run "C:\w.kali"
 ^+x:: EditFileList(SUB, "")
 
 ;CTRL ALT SHIFT
@@ -58,7 +61,7 @@ VIM  := "C:\Program Files\Vim\vim90\gvim.exe"
 ^!+t:: run *runas "wt"
 ^!+u:: run "C:\Program Files\VS Revo Group\Revo Uninstaller\RevoUnin.exe"
 ^!+v:: PasteKeystrokes()
-^!+w:: run "W:\"
+^!+w:: run "X:\work"
 ^!+x:: EditFileList(CODE, "")
 
 ;FUNCTIONS
