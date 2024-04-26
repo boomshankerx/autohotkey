@@ -29,8 +29,8 @@ VIM  := "C:\Program Files\Vim\vim90\gvim.exe"
 
 ;ALT WIN
 !#1:: run "%A_USERPROFILE%\OneDrive\Financial Statements.xlsx"
-!#2:: run "%A_USERPROFILE%\TechG Solutions\TechG Solutions - Documents\TechG.xlsx"
-!#`:: run "%A_USERPROFILE%\TechG Solutions\TechG Solutions - Documents\Network.xlsx" 
+!#2:: run "T:\TechG.xlsx"
+!#`:: run "T:\Network.xlsx" 
 
 ;CTRL ALT
 ^!d:: run "%A_USERPROFILE%\Downloads"
@@ -43,14 +43,14 @@ VIM  := "C:\Program Files\Vim\vim90\gvim.exe"
 ^!s:: run "Y:\"
 ^!t:: run "wt"
 ^!u:: run "%A_USERPROFILE%\Dropbox\_tools\_usb"
-^!w:: run "C:\w"
+^!w:: run "D:\w"
 ^!x:: EditFileList(VIM, "-O")
 ^!z:: run "Z:\"
 
 ;CTRL SHIFT
 ^+=:: run "OneNote"
 ^+s:: run "%A_USERPROFILE%\Dropbox"
-^+w:: run "C:\w.kali"
+^+w:: run "D:\w.kali"
 ^+x:: EditFileList(SUB, "")
 
 ;CTRL ALT SHIFT
